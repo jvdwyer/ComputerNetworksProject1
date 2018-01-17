@@ -69,8 +69,8 @@ class DynamicTopo(Topo):
              if x > 1:
                   self.addLink('s%d' % (x), 's%d' % (x-1), **linkConfig)
              for y in range(1, args.n + 1):
-                  self.addHost('h%dx%d' % (x, y), **hostConfig)
-                  self.addLink('h%dx%d' % (x, y), 's%d' % (x), **linkConfig)
+                  self.addHost('h%d-%d' % (x, y), **hostConfig)
+                  self.addLink('h%d-%d' % (x, y), 's%d' % (x), **linkConfig)
         self.addLink('s1', 's%d' % (args.z), **linkConfig)
 
 def main():
